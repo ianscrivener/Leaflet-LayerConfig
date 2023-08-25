@@ -5,7 +5,7 @@ Library that communicates with a web service/reads a stored JavaScript object an
 
 
 
-##Usage
+## Usage
 L.LayerConfig takes two arguments, the first one is either a URL or a object containing the information about the layers to add. A sample.json file is provided that shows some of the options available.
 The second argument is the map container or LayerGroup/FeatureGroup on which we add layers to.
 
@@ -13,7 +13,7 @@ The second argument is the map container or LayerGroup/FeatureGroup on which we 
 var layerConfig = L.layerConfig(object or url to json file, map);
 ```
 
-##JSON notation
+## JSON notation
 The object containing the information is pretty basic, here is a sample file adding only a marker and setting the map view to a coordinate and a zoomlevel. You can also set bounds if you want to fit the map view to always show some objects.
  ```
 {
@@ -32,9 +32,9 @@ The object containing the information is pretty basic, here is a sample file add
  To pass options to the layer simply add a options key to the layer. The options passed to the layer is in the same format as the Leaflet options found in the reference.
  Some option keys support functions if you want to pass a function to Leaflet through a web service you need to put it in a single line string. A minifier can help with that. This is because JSON does not support functions or multiline strings.
 
-###Other supported layer types:
+### Other supported layer types:
 
-####GeoJSON
+#### GeoJSON
 This can either take an URL or a GeoJSON object
 
 ```
@@ -69,7 +69,7 @@ This can either take an URL or a GeoJSON object
 
 }
 ```
-####TileLayer
+#### TileLayer
 ```
 {
     "type": "tilelayer",
@@ -79,7 +79,7 @@ This can either take an URL or a GeoJSON object
     }
 }
 ```
-####WMS
+#### WMS
 ```
 {
     "type": "wms",
@@ -89,7 +89,7 @@ This can either take an URL or a GeoJSON object
     }
 }
 ```
-####PolyLine
+#### PolyLine
 ```
  {
     "type": "line",
@@ -97,7 +97,7 @@ This can either take an URL or a GeoJSON object
     "popupContent": "Prinsens gate"
  }
 ```
-####Polygon
+#### Polygon
 ```
  {
     "type": "polygon",
@@ -106,7 +106,7 @@ This can either take an URL or a GeoJSON object
     	    [63.42639, 10.38975]]]
  }
 ```
-####Rectangle
+#### Rectangle
 ```
  {
     "type": "rectangle",
@@ -118,7 +118,7 @@ This can either take an URL or a GeoJSON object
     }
  }
 ```
-####Circle
+#### Circle
 ```
 { 
     "type": "circle",
@@ -126,7 +126,7 @@ This can either take an URL or a GeoJSON object
     "radius": 10
 }
 ```
-####CircleMarker
+#### CircleMarker
 ```
 {
     "type": "circlemarker",
@@ -134,7 +134,7 @@ This can either take an URL or a GeoJSON object
 }
 ```
 
-####FeatureGroup
+#### FeatureGroup
 FeatureGroup has a "layer" key containing the layers to be added to it. This is in the same format as the top-level layer key.
 ```
 {
@@ -158,7 +158,7 @@ FeatureGroup has a "layer" key containing the layers to be added to it. This is 
     "popupContent": "Kongens gate"
 }
 ```
-####LayerGroup
+#### LayerGroup
 LayerGroup has a "layer" key containing the layers to be added to it. This is in the same format as the top-level layer key.
 ```
 {
@@ -181,7 +181,7 @@ LayerGroup has a "layer" key containing the layers to be added to it. This is in
     ]
 }
 ```
-###Events
+### Events
 Leaflet-LayerConfig fires various events.
 
 | Name | Description |
